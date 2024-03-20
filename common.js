@@ -572,9 +572,6 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       s.prototype = Object.create(e.prototype), s.prototype.constructor = s, s.__proto__ = e
   }
 
-
-  gsap.to("body",{duration:5,opacity:0})
-
   /*!
    * GSAP 3.12.2
    * https://greensock.com
@@ -4683,6 +4680,10 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       }
   }, zl() && R.registerPlugin(K);
 
+  function zzz(){
+    qe.registerPlugin(K);
+    qe.to("body",{duration:5,opacity:0});
+  }
   function bf() {
       qe.registerPlugin(K);
       const s = new ul;
@@ -5744,7 +5745,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
           o = document.querySelector("#total");
       i.textContent = e, n.textContent = r, o.textContent = t
   }
-  if (window.location.pathname !== "/404" && window.location.pathname !== "/wizard/cube" && window.location.pathname !== "/success") bf(), wf(), Rf();
+  if (window.location.pathname !== "/404" && window.location.pathname !== "/wizard/cube" && window.location.pathname !== "/success") bf(), wf(), Rf(),zzz();
   else if (window.location.pathname === "/wizard/cube") {
       kf();
       const s = document.querySelector(".is--checkout-popup"),
