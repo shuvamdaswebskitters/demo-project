@@ -4734,7 +4734,6 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             let pinWrap = document.querySelector(".horizontal-item-wrppr");
             let pinWrapWidth = pinWrap.offsetWidth;
             let horizontalScrollLength = pinWrapWidth - window.innerWidth;
-            window.addEventListener("load", function () {
                 qe.to('.horizontal-item-wrppr', {
                     scrollTrigger: {
                         // scroller: pageContainer, //locomotive-scroll
@@ -4742,7 +4741,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                         trigger: ".horizontal-item-wrppr",
                         pin: true,
                         start: "top top",
-                        end: "=+100%", //+ ((pinBoxes.length - 1) * 100) + "%",
+                        // end: "bottom bottom",
+                        end: "=+" + ((pinBoxes.length - 1) * 100) + "%",
                         // markers: true,
                         // pinSpacing: true,
                     },
@@ -4752,7 +4752,6 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                       K.refresh();
                     }
                 });
-            });   
           }
       }
       e();
