@@ -4682,35 +4682,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 
 
 
-  function zzz(){
-    qe.registerPlugin(K);
-   
-    let pinBoxes = document.querySelectorAll(".horizntl_each_item");
-    if(pinBoxes.length){
-      let pinWrap = document.querySelector(".horizontal-item-wrppr");
-      let pinWrapWidth = pinWrap.offsetWidth;
-      let horizontalScrollLength = pinWrapWidth - window.innerWidth;
-      window.addEventListener("load", function () {
-          qe.to('.horizontal-item-wrppr', {
-              scrollTrigger: {
-                  // scroller: pageContainer, //locomotive-scroll
-                  scrub: true,
-                  trigger: ".horizontal-item-wrppr",
-                  pin: true,
-                  start: "top top",
-                  end: "=+" + ((pinBoxes.length - 1) * 100) + "%",
-                  // markers: true,
-                  pinSpacing: true,
-              },
-              x: -horizontalScrollLength,
-              ease: "power1.out",
-              onStart:()=>{
-                K.refresh();
-              }
-          });
-      });   
-    }
-  }
+  
 
   function bf() {
       qe.registerPlugin(K);
@@ -4759,6 +4731,37 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
           }
       }
       e();
+
+      function zzz(){
+        qe.registerPlugin(K);
+       
+        let pinBoxes = document.querySelectorAll(".horizntl_each_item");
+        if(pinBoxes.length){
+          let pinWrap = document.querySelector(".horizontal-item-wrppr");
+          let pinWrapWidth = pinWrap.offsetWidth;
+          let horizontalScrollLength = pinWrapWidth - window.innerWidth;
+          window.addEventListener("load", function () {
+              qe.to('.horizontal-item-wrppr', {
+                  scrollTrigger: {
+                      // scroller: pageContainer, //locomotive-scroll
+                      scrub: true,
+                      trigger: ".horizontal-item-wrppr",
+                      pin: true,
+                      start: "top top",
+                      end: "=+" + ((pinBoxes.length - 1) * 100) + "%",
+                      // markers: true,
+                      pinSpacing: true,
+                  },
+                  x: -horizontalScrollLength,
+                  ease: "power1.out",
+                  onStart:()=>{
+                    K.refresh();
+                  }
+              });
+          });   
+        }
+      }
+
 
       function r(g) {
           document.querySelectorAll("[animate]").forEach(function(y, w) {
@@ -5773,7 +5776,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
           o = document.querySelector("#total");
       i.textContent = e, n.textContent = r, o.textContent = t
   }
-  if (window.location.pathname !== "/404" && window.location.pathname !== "/wizard/cube" && window.location.pathname !== "/success") zzz(), bf(), wf(), Rf();
+  if (window.location.pathname !== "/404" && window.location.pathname !== "/wizard/cube" && window.location.pathname !== "/success") bf(), wf(), Rf();
   else if (window.location.pathname === "/wizard/cube") {
       kf();
       const s = document.querySelector(".is--checkout-popup"),
