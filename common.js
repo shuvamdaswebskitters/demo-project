@@ -1,5 +1,5 @@
 (function () {
-
+function aa(){
   /*!
  * GSAP 3.12.2
  * https://greensock.com
@@ -99,4 +99,6 @@ if(('.feed-slider').length){
 
 
 });
+}
+aa();
 })();
