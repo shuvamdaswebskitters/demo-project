@@ -4734,24 +4734,30 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             let pinWrap = document.querySelector(".horizontal-item-wrppr");
             let pinWrapWidth = pinWrap.offsetWidth;
             let horizontalScrollLength = pinWrapWidth - window.innerWidth;
-                qe.to('.horizontal-item-wrppr', {
-                    scrollTrigger: {
-                        // scroller: pageContainer, //locomotive-scroll
-                        scrub: true,
-                        trigger: ".horizontal-item-wrppr",
-                        pin: true,
-                        start: "top top",
-                        // end: "bottom bottom",
-                        end: "=+" + ((pinBoxes.length - 1) * 100) + "%",
-                        // markers: true,
-                        // pinSpacing: true,
-                    },
-                    x: -horizontalScrollLength,
-                    ease: "power1.out",
-                    onStart:()=>{
-                      K.refresh();
-                    }
-                });
+
+            const  CAA = () => {
+                window.innerWidth > 991 ? pinWrap.style.height = `${(pinBoxes.length - 1)*window.innerHeight}px` : pinWrap.style.height = "auto"
+            };
+            CAA(), window.addEventListener("resize", CAA), qe.matchMedia().add("(min-width: 991px)", () => {
+              qe.to('.horizontal-item-wrppr', {
+                scrollTrigger: {
+                    // scroller: pageContainer, //locomotive-scroll
+                    scrub: true,
+                    trigger: ".horizontal-item-wrppr",
+                    pin: true,
+                    start: "top top",
+                    end: "bottom bottom",
+                    // end: "=+" + ((pinBoxes.length - 1) * 100) + "%",
+                    markers: true,
+                    // pinSpacing: true,
+                },
+                x: -horizontalScrollLength,
+                ease: "power1.out",
+                // onStart:()=>{
+                //   K.refresh();
+                // }
+              });
+            });
           }
       }
       e();
