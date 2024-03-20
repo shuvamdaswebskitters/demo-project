@@ -4748,7 +4748,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     start: "top top",
                     end: "bottom bottom",
                     // end: "=+" + ((pinBoxes.length - 1) * 100) + "%",
-                    markers: true,
+                    // markers: true,
                     // pinSpacing: true,
                 },
                 x: -horizontalScrollLength,
