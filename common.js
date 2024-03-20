@@ -4682,7 +4682,6 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 
   function zzz(){
     qe.registerPlugin(K);
-    qe.to("body",{duration:5,opacity:0});
    
     let pinBoxes = document.querySelectorAll(".horizntl_each_item");
     if(pinBoxes.length){
@@ -5794,79 +5793,3 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       })
   } else window.location.pathname === "/success" && Nf()
 });
-
-
-//   jQuery(document).ready(function($){
-// if(('.feed-slider').length){
-//  $('.feed-slider').slick({
-//      dots: false,
-//      infinite: true,
-//      arrows: true,
-//      nextArrow: ".cmn-arrw-btn.next",
-//      prevArrow: ".cmn-arrw-btn.prev",
-//      speed: 800,
-//      slidesToShow: 2,
-//      slidesToScroll: 1,
-//      centerMode: true,
-//      centerPadding: '22vw',
-//      responsive: [
-//        {
-//          breakpoint: 1024,
-//          settings: {
-//            slidesToShow: 2,
-//            slidesToScroll: 1,
-//            infinite: true,
-//            dots: false
-//          }
-//        },
-//        {
-//          breakpoint: 600,
-//          settings: {
-//            slidesToShow: 2,
-//            slidesToScroll: 2
-//          }
-//        },
-//        {
-//          breakpoint: 480,
-//          settings: {
-//            slidesToShow: 1,
-//            slidesToScroll: 1
-//          }
-//        }
-//      ]
-//  });
-// }
-
-
-// // setTimeout(() => {
-// //   ScrollTrigger.refresh();  
-// // }, 5000);
-
-//  if(('.horizntl_each_item').length){
-//    let pinBoxes = document.querySelectorAll(".horizntl_each_item");
-//    let pinWrap = document.querySelector(".horizontal-item-wrppr");
-//    let pinWrapWidth = pinWrap.offsetWidth;
-//    let horizontalScrollLength = pinWrapWidth - window.innerWidth;
-
-
-//    window.addEventListener("load", function () {
-//        gsap.to('.horizontal-item-wrppr', {
-//            scrollTrigger: {
-//                // scroller: pageContainer, //locomotive-scroll
-//                scrub: true,
-//                trigger: ".horizontal-item-wrppr",
-//                pin: true,
-//                start: "top top",
-//                end: "=+" + ((pinBoxes.length - 1) * 100) + "%",
-//                // toggleClass: 'show',
-//                markers: true,
-//                pinSpacing: true,
-//            },
-//            x: -horizontalScrollLength,
-//            ease: "power1.out"
-//        });
-//    });   
-//  }
-
-
-// });
