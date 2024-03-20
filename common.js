@@ -4701,7 +4701,10 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                   pinSpacing: true,
               },
               x: -horizontalScrollLength,
-              ease: "power1.out"
+              ease: "power1.out",
+              onStart:()=>{
+                ScrollTrigger.refresh();
+              }
           });
       });   
     }
