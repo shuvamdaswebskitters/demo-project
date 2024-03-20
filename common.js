@@ -4683,6 +4683,29 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   function zzz(){
     qe.registerPlugin(K);
     qe.to("body",{duration:5,opacity:0});
+   
+    let pinBoxes = document.querySelectorAll(".horizntl_each_item");
+    if(pinBoxes.length){
+      let pinWrap = document.querySelector(".horizontal-item-wrppr");
+      let pinWrapWidth = pinWrap.offsetWidth;
+      let horizontalScrollLength = pinWrapWidth - window.innerWidth;
+      window.addEventListener("load", function () {
+          qe.to('.horizontal-item-wrppr', {
+              scrollTrigger: {
+                  // scroller: pageContainer, //locomotive-scroll
+                  scrub: true,
+                  trigger: ".horizontal-item-wrppr",
+                  pin: true,
+                  start: "top top",
+                  end: "=+" + ((pinBoxes.length - 1) * 100) + "%",
+                  markers: true,
+                  pinSpacing: true,
+              },
+              x: -horizontalScrollLength,
+              ease: "power1.out"
+          });
+      });   
+    }
   }
   function bf() {
       qe.registerPlugin(K);
@@ -5773,9 +5796,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 });
 
 
-// (function () {
 //   jQuery(document).ready(function($){
-
 // if(('.feed-slider').length){
 //  $('.feed-slider').slick({
 //      dots: false,
@@ -5845,9 +5866,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 //            ease: "power1.out"
 //        });
 //    });   
-
 //  }
 
 
 // });
-// })();
