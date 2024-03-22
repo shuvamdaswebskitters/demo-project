@@ -4748,7 +4748,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     start: "top top",
                     end: "bottom bottom",
                     // end: "=+" + ((pinBoxes.length - 1) * 100) + "%",
-                    markers: true,
+                    // markers: true,
                     // pinSpacing: true,
                 },
                 x: -horizontalScrollLength,
@@ -4949,7 +4949,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     start: "top center",
                     end: "bottom center",
                     scrub: 1,
-                    markers: false,
+                    // markers: false,
                     onEnter: () => {
                         w || (w = !0, console.log("triggered"), S(), C(y, A))
                     },
