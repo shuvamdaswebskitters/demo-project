@@ -4949,6 +4949,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     start: "top center",
                     end: "bottom center",
                     scrub: 1,
+                    markers: false,
                     onEnter: () => {
                         w || (w = !0, console.log("triggered"), S(), C(y, A))
                     },
