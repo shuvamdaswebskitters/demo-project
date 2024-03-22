@@ -4748,7 +4748,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     start: "top top",
                     end: "bottom bottom",
                     // end: "=+" + ((pinBoxes.length - 1) * 100) + "%",
-                    // markers: true,
+                    markers: true,
                     // pinSpacing: true,
                 },
                 x: -horizontalScrollLength,
@@ -4759,6 +4759,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
               });
             });
           }
+
+
+
       }
       e();
 
@@ -4917,6 +4920,47 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
           })
       }
       setTimeout(o, 2e3);
+
+
+      function obg() {
+        const g = document.querySelector(".each-item-wrappr"),
+            y = document.querySelectorAll(".each-item-number");
+        let w = !1;
+        const S = () => {
+                y.forEach(z => {
+                    z.classList.remove("is--black")
+                })
+            },
+            A = z => {
+                z.classList.add("is--black")
+            };
+
+        function C(z, x) {
+            z.forEach((H, q) => {
+                setTimeout(() => {
+                    S(), x(H)
+                }, q * 500)
+            })
+        }
+        const L = (z, x) => {
+            qe.to(z, {
+                scrollTrigger: {
+                    trigger: g,
+                    start: "top center",
+                    end: "bottom center",
+                    scrub: 1,
+                    onEnter: () => {
+                        w || (w = !0, console.log("triggered"), S(), C(y, A))
+                    },
+                    onLeaveBack: () => {}
+                }
+            })
+        };
+        y.forEach((z, x) => {
+            L(z)
+        })
+    }
+    setTimeout(obg, 2e3);
 
       function a() {
           const g = document.querySelector(".footer"),
