@@ -4965,7 +4965,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 
       function a() {
           const g = document.querySelector(".footer"),
-              y = document.querySelector(".main-cta-btn-wrappr");
+              y = document.querySelector(".cta-trigger");
           g && y && new IntersectionObserver(function(S) {
               S.forEach(function(A) {
                   A.isIntersecting ? y.classList.add("is--hidden") : y.classList.remove("is--hidden")
@@ -5066,7 +5066,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
           n = document.querySelectorAll('[data-sidebar="form-close"]'),
           o = document.querySelectorAll('[data-sidebar="cta-close"]'),
           a = document.querySelectorAll('[data-sidebar="cta-mobile"]'),
-          l = document.querySelector(".main-cta-btn-wrappr"),
+          l = document.querySelector(".cta-trigger"),
           c = document.querySelector(".is--slider-popup"),
           u = document.querySelector(".is--form-popup"),
           _ = document.querySelector(".is--cta-popup"),
